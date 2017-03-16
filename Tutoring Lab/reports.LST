@@ -1,0 +1,71 @@
+
+///////////////////////////////Professors Reports////////////////////////////////////////
+
+--a)Visits by Professor:
+
+select Instructor, count(*) as "# visits" from Visits
+where to_char(VisitDate, 'YYYY-MM') = to_char(sysdate, 'YYYY-MM') 
+group by Instructor;
+
+--b)Visits by Subject:
+
+select CourseNumber, count(*) as "# visits" from Visits
+where to_char(VisitDate, 'YYYY-MM') = to_char(sysdate, 'YYYY-MM') 
+group by CourseNumber ; 
+
+--c)Monthly Report to Professor:
+
+select StudentName, VisitDate, CourseNumber, Topic from Visits
+where to_char(VisitDate, 'YYYY-MM') = to_char(sysdate, 'YYYY-MM')
+order by VisitDate desc ; 
+
+
+///////////////////////////////Math Lab Manager Reports///////////////////////////////////
+
+--a)Tutor's Hours Paid:
+
+select TutorName, HrsWorkedPerWeek from Tutor ;  
+
+select sum(HrsWorkedPerWeek) as "Total Hours Worked Per Week" from Tutor;//total hours
+
+select sum(HrsWorkedPerWeek)*7.25 as "Total Cost Per Week" from Tutor;//total cost
+
+It is hard to determine the total hours paid this month because the number of days differ and we will
+have to figure out which day of the week the month begins and ends.
+
+We can use a really long case query but for now we can assume that a month is 4 weeks so the query is:
+
+select sum(HrsWorkedPerWeek)*4 as "Total Hours a month" from Tutor;//total hours per month
+
+--b)Summary Report:
+
+select to_char(sysdate, 'Month') from dual;//current month
+
+select case(to_char(sysdate, 'Q')) 
+when '1' then 'Sem. 2' 
+when '2' then 'Sem. 2' 
+when '3' then 'Sem. 1' 
+when '4' then 'Sem. 1' 
+end as "Semester", to_char(sysdate, 'YYYY') 
+from dual;  //current semester/year
+
+select count(*) from Visits 
+where to_char(VisitDate, 'YYYY-MM') = to_char(sysdate, 'YYYY-MM');//visits this month 
+
+select count(*) from Visits 
+where to_char(VisitDate, 'YYYY-MM') = to_char(add_months(sysdate, -12), 'YYYY-MM');//visits this month lsat year 
+
+select count(*) from Visits 
+where to_number(to_char(VisitDate, 'Q')) in (to_number(to_char(sysdate, 'Q')), 
+mod(to_number(to_char(sysdate, 'Q'))+2*to_number(to_char(sysdate, 'Q')),
+2)+1) and to_char(VisitDate, 'YYYY') = to_char(sysdate, 'YYYY'); //visits this semester
+
+select count(*) from Visits
+where to_number(to_char(VisitDate, 'Q')) in (to_number(to_char(sysdate, 'Q')), 
+mod(to_number(to_char(sysdate, 'Q'))+2*to_number(to_char(sysdate, 'Q')), 
+2)+1) and to_char(VisitDate, 'YYYY') = to_char(add_months(sysdate, -12), 'YYYY');//visits this semester last year
+
+See part a)
+
+select sum(a.HrsWorkedPerWeek)*7.25/count(b.VisitDate) as "Average Cost per visit" from Tutor a
+join Visits b on to_char(b.VisitDate, 'YYYY-MM') = to_char(sysdate, 'YYYY-MM'); //average cost per visit

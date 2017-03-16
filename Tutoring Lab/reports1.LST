@@ -1,0 +1,594 @@
+SQL> spool
+currently spooling to H:\reports.LST
+
+SQL> select to_char(VisitDate, 'YYYY-MM') as "Date",
+  2  Instructor as "Professor",
+  3  count(distinct VisitDate) as "# of visits" from Visits
+  4  group by to_char(VisitDate, 'YYYY-MM'),
+  5  Instructor;
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-10 Miller, D                               27                              
+2013-03 Spilker, R                              20                              
+2012-09 Risch, G                                26                              
+2012-10 Gardner, L                              11                              
+2013-02 Spilker, R                              21                              
+2012-10 Maxwell, M                              22                              
+2013-10 Risch, G                                22                              
+2014-01 Higdon, W                                6                              
+2012-10 Risch, G                                27                              
+2012-11 Chew, G                                 32                              
+2013-02 Thang, P                                11                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2012-10 Lang, S                                 25                              
+2013-04 Miller, D                               18                              
+2014-03 Maxwell, M                              29                              
+2012-09 Oaks, J                                  3                              
+2013-04 Higdon, W                                6                              
+2013-03 Thang, P                                20                              
+2013-01 Maupin, R                               17                              
+2014-01 Maxwell, M                              15                              
+2012-12 Miller, D                                3                              
+2012-09 Spilker, R                              11                              
+2014-02 Sawaski, J                              10                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2014-02 Leganza, K                               4                              
+2014-04 Naziripour, G                            4                              
+2014-02 Oaks, J                                  6                              
+2013-12 Miller, D                                4                              
+2013-05 Sawaski, J                               1                              
+2013-05 Maupin, R                                3                              
+2013-02 Miller, T                                3                              
+2013-12 Miller, T                                4                              
+2013-01 Fulmer, R                                1                              
+2014-01 Sawaski, J                               2                              
+2013-01 Naziripour, G                            2                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-11 Miller, T                                5                              
+2012-12 Lang, S                                  2                              
+2013-04 Risch, G                                20                              
+2013-11 Sawaski, J                              17                              
+2013-10 Maupin, R                               47                              
+2013-03 Risch, G                                22                              
+2014-02 Maupin, R                               39                              
+2013-04 Spilker, R                              22                              
+2013-03 McCoy, W                                10                              
+2013-03 Sawaski, J                              25                              
+2014-04 Risch, G                                21                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2014-03 Oaks, J                                  9                              
+2012-11 Leganza, K                               8                              
+2012-11 Miller, D                               19                              
+2013-02 Chew, G                                 11                              
+2012-11 Oaks, J                                  3                              
+2014-03 Miller, T                                9                              
+2013-10 Hummel, L                                4                              
+2012-09 Gardner, L                              14                              
+2013-09 Maxwell, M                              24                              
+2013-10 Maxwell, M                              27                              
+2012-11 Maupin, R                               47                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2012-09 Bouzar, N                               16                              
+2014-04 Thang, P                                 6                              
+2012-11 Thang, P                                12                              
+2014-03 Sawaski, J                               9                              
+2013-09 Gardner, L                               9                              
+2014-02 Chew, G                                  9                              
+2013-11 McCoy, W                                 3                              
+2014-01 Fulmer, R                                4                              
+2013-04 Maxwell, M                               6                              
+2012-11 Sawaski, J                               7                              
+2013-09 Lang, S                                 13                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2014-02 Bouzar, N                               20                              
+2013-11 Oaks, J                                  6                              
+2012-12 Risch, G                                 7                              
+2014-05 Higdon, W                                1                              
+2013-10 Fulmer, R                                9                              
+2013-05 Miller, T                                1                              
+2013-02 Gardner, L                               8                              
+2014-05 Miller, D                                1                              
+2013-09 Bouzar, N                                2                              
+2012-12 Sawaski, J                               1                              
+2014-04 Hummel, L                                9                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2012-12 Hummel, L                                1                              
+2014-05 Thang, P                                 1                              
+2013-01 Maxwell, M                               1                              
+2014-04 Chew, G                                 12                              
+2013-12 McCoy, W                                 1                              
+2013-10 Sawaski, J                              21                              
+2014-03 Thang, P                                20                              
+2012-09 Miller, D                               10                              
+2013-02 Maupin, R                               25                              
+2012-10 Hummel, L                                9                              
+2013-03 Lang, S                                 25                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2012-11 Gardner, L                              10                              
+2012-12 Maupin, R                                4                              
+2014-04 Oaks, J                                  6                              
+2012-09 Thang, P                                11                              
+2014-04 McCoy, W                                 7                              
+2012-10 Spilker, R                              19                              
+2014-03 Naziripour, G                            8                              
+2012-12 Thang, P                                 1                              
+2012-09 Miller, T                                3                              
+2013-11 Thang, P                                11                              
+2013-12 Higdon, W                                4                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-09 Spilker, R                              16                              
+2014-01 Risch, G                                13                              
+2013-11 Spilker, R                              14                              
+2013-05 Fulmer, R                                1                              
+2013-04 Naziripour, G                            5                              
+2012-10 Chew, G                                 23                              
+2014-05 Risch, G                                 2                              
+2013-03 Bouzar, N                                2                              
+2013-03 Higdon, W                                8                              
+2014-01 Bouzar, N                                5                              
+2013-12 Lang, S                                  2                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2014-01 Miller, T                                4                              
+2012-12 Higdon, W                                1                              
+2014-01 McCoy, W                                 2                              
+2013-04 Maupin, R                               31                              
+2014-02 Higdon, W                                7                              
+2013-11 Higdon, W                               13                              
+2012-09 Fulmer, R                               28                              
+2013-03 Miller, D                               19                              
+2013-10 Miller, T                               13                              
+2012-10 Fulmer, R                               20                              
+2014-01 Gardner, L                               6                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-01 Chew, G                                  9                              
+2014-04 Maxwell, M                              31                              
+2013-10 Thang, P                                13                              
+2012-10 Thang, P                                18                              
+2014-01 Miller, D                                6                              
+2014-04 Fulmer, R                                8                              
+2014-03 Lang, S                                 10                              
+2013-05 Maxwell, M                               1                              
+2013-03 Maxwell, M                               7                              
+2012-10 Miller, T                                6                              
+2014-02 Spilker, R                               2                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-09 Naziripour, G                            2                              
+2014-05 Miller, T                                1                              
+2013-04 Fulmer, R                                2                              
+2013-05 Spilker, R                               1                              
+2012-12 Fulmer, R                                2                              
+2012-09 McCoy, W                                24                              
+2012-10 Bouzar, N                               14                              
+2012-10 Leganza, K                               4                              
+2012-11 Lang, S                                 18                              
+2013-01 Sawaski, J                              11                              
+2013-09 Thang, P                                21                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2014-02 Miller, T                                6                              
+2013-01 McCoy, W                                 3                              
+2013-09 Fulmer, R                                9                              
+2013-09 Maupin, R                               45                              
+2013-09 Oaks, J                                 10                              
+2012-10 Maupin, R                               44                              
+2013-04 Leganza, K                               6                              
+2014-02 Risch, G                                23                              
+2014-03 Bouzar, N                               18                              
+2014-02 Naziripour, G                            5                              
+2014-03 Chew, G                                  3                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2012-09 Chew, G                                 24                              
+2013-09 Miller, D                               27                              
+2014-04 Leganza, K                              11                              
+2014-02 Lang, S                                 12                              
+2014-02 Thang, P                                11                              
+2012-12 Miller, T                                2                              
+2013-10 Higdon, W                               13                              
+2012-11 Fulmer, R                               26                              
+2013-02 Miller, D                               20                              
+2013-05 Thang, P                                 3                              
+2014-03 Gardner, L                              14                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-10 Spilker, R                              13                              
+2013-01 Miller, T                                4                              
+2013-03 Hummel, L                                2                              
+2014-03 Higdon, W                                8                              
+2014-04 Spilker, R                               7                              
+2013-10 Lang, S                                 22                              
+2013-02 Maxwell, M                               7                              
+2013-01 Thang, P                                 6                              
+2013-11 Bouzar, N                                4                              
+2014-01 Lang, S                                  1                              
+2013-01 Hummel, L                                1                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2014-04 Miller, D                               24                              
+2014-01 Thang, P                                 7                              
+2014-04 Maupin, R                               31                              
+2014-02 Miller, D                               25                              
+2014-02 Maxwell, M                              28                              
+2013-02 Risch, G                                17                              
+2013-02 Oaks, J                                  8                              
+2013-12 Risch, G                                 4                              
+2012-11 Maxwell, M                              13                              
+2012-10 Miller, D                               16                              
+2013-09 McCoy, W                                15                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2012-09 Maxwell, M                              12                              
+2014-03 Spilker, R                               3                              
+2014-04 Bouzar, N                               25                              
+2013-02 Bouzar, N                                2                              
+2014-02 Gardner, L                              15                              
+2013-02 Naziripour, G                            3                              
+2013-11 Chew, G                                 11                              
+2013-01 Spilker, R                              11                              
+2013-10 Naziripour, G                            2                              
+2013-09 Higdon, W                               11                              
+2013-04 Chew, G                                 13                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2012-09 Sawaski, J                              12                              
+2013-04 Hummel, L                                5                              
+2013-04 Lang, S                                 18                              
+2013-02 Hummel, L                                5                              
+2013-04 Miller, T                                4                              
+2013-12 Hummel, L                                2                              
+2013-04 Sawaski, J                              24                              
+2012-09 Naziripour, G                            3                              
+2014-03 McCoy, W                                 3                              
+2013-02 Fulmer, R                                5                              
+2014-01 Spilker, R                               2                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-03 Naziripour, G                            5                              
+2013-04 McCoy, W                                 7                              
+2013-05 Hummel, L                                1                              
+2013-01 Gardner, L                               1                              
+2013-04 Bouzar, N                                1                              
+2013-05 Gardner, L                               1                              
+2013-12 Spilker, R                               2                              
+2012-11 Naziripour, G                            2                              
+2013-02 Leganza, K                               3                              
+2013-12 Naziripour, G                            1                              
+2014-01 Oaks, J                                  5                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2014-04 Gardner, L                              13                              
+2013-09 Chew, G                                  6                              
+2014-02 Hummel, L                                4                              
+2014-03 Maupin, R                               38                              
+2014-01 Maupin, R                               14                              
+2012-11 Risch, G                                41                              
+2014-04 Higdon, W                               11                              
+2013-02 Sawaski, J                              20                              
+2013-09 Risch, G                                21                              
+2013-12 Chew, G                                  1                              
+2014-03 Hummel, L                                7                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2012-10 Sawaski, J                              17                              
+2012-09 Lang, S                                 17                              
+2013-03 Chew, G                                 16                              
+2013-03 Fulmer, R                                8                              
+2013-03 Miller, T                                5                              
+2014-02 Fulmer, R                               10                              
+2013-09 Miller, T                                8                              
+2014-05 Spilker, R                               3                              
+2013-11 Miller, D                               18                              
+2013-11 Gardner, L                               9                              
+2013-03 Oaks, J                                 12                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2014-02 McCoy, W                                 3                              
+2013-09 Hummel, L                                3                              
+2013-12 Maxwell, M                               4                              
+2013-01 Lang, S                                  9                              
+2012-12 Chew, G                                  5                              
+2013-05 Miller, D                                3                              
+2013-02 McCoy, W                                10                              
+2013-03 Leganza, K                               6                              
+2013-12 Thang, P                                 7                              
+2013-02 Higdon, W                               11                              
+2013-11 Fulmer, R                                7                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2014-05 Hummel, L                                1                              
+2012-11 Miller, T                                6                              
+2014-05 Maupin, R                                3                              
+2013-10 McCoy, W                                 9                              
+2012-09 Leganza, K                               1                              
+2012-12 Bouzar, N                                2                              
+2012-11 Hummel, L                                5                              
+2013-10 Oaks, J                                  4                              
+2014-01 Chew, G                                  5                              
+2012-12 Oaks, J                                  2                              
+2014-05 Maxwell, M                               2                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-01 Higdon, W                                3                              
+2012-12 Gardner, L                               1                              
+2013-05 Higdon, W                                1                              
+2014-05 Fulmer, R                                1                              
+2012-10 McCoy, W                                19                              
+2012-12 Spilker, R                               4                              
+2014-03 Risch, G                                25                              
+2013-11 Risch, G                                31                              
+2013-04 Oaks, J                                  9                              
+2013-10 Gardner, L                               5                              
+2012-11 McCoy, W                                26                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-09 Sawaski, J                              14                              
+2014-04 Sawaski, J                               8                              
+2012-11 Spilker, R                              20                              
+2014-03 Fulmer, R                               10                              
+2013-10 Bouzar, N                               12                              
+2012-09 Maupin, R                               31                              
+2013-04 Gardner, L                               4                              
+2013-11 Maxwell, M                              32                              
+2013-03 Maupin, R                               29                              
+2013-05 Risch, G                                 3                              
+2014-03 Miller, D                               14                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-01 Miller, D                               10                              
+2014-05 Lang, S                                  2                              
+2012-11 Higdon, W                                9                              
+2013-01 Risch, G                                10                              
+2013-11 Maupin, R                               42                              
+2014-04 Lang, S                                  5                              
+2013-02 Lang, S                                 15                              
+2012-11 Bouzar, N                                8                              
+2013-11 Hummel, L                                5                              
+2014-04 Miller, T                               10                              
+2012-09 Hummel, L                                8                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-12 Maupin, R                                9                              
+2013-11 Lang, S                                 12                              
+2013-04 Thang, P                                23                              
+2013-10 Chew, G                                  9                              
+2012-10 Oaks, J                                  4                              
+2014-03 Leganza, K                               4                              
+2013-01 Oaks, J                                  2                              
+2013-12 Sawaski, J                               5                              
+2012-09 Higdon, W                                6                              
+2013-05 Lang, S                                  4                              
+2012-10 Higdon, W                                4                              
+
+Date    Professor                      # of visits                              
+------- ------------------------------ -----------                              
+2013-11 Naziripour, G                            5                              
+2012-12 Maxwell, M                               1                              
+2013-03 Gardner, L                               6                              
+2014-01 Hummel, L                                3                              
+2014-05 Gardner, L                               2                              
+2013-12 Bouzar, N                                1                              
+
+314 rows selected.
+
+SQL> select to_char(VisitDate, 'YYYY-MM') as "Date",
+  2  CourseNumber,
+  3  count(distinct VisitDate) as "# of visits" from Visits
+  4  group by to_char(VisitDate, 'YYYY-MM'),
+  5  CourseNumber;
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2013-04 090          49                                                         
+2012-12 105           9                                                         
+2013-09 150          64                                                         
+2013-12 150          10                                                         
+2014-03 090          33                                                         
+2014-01 180          21                                                         
+2012-10 180          19                                                         
+2013-12 090           9                                                         
+2013-11 220          20                                                         
+2014-02 180          40                                                         
+2013-12 105          19                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2013-04 180          21                                                         
+2012-09 150          17                                                         
+2013-02 220          15                                                         
+2013-04 191           3                                                         
+2014-02 108          12                                                         
+2014-02 191           3                                                         
+2012-10 108           1                                                         
+2014-05 180           3                                                         
+2012-09 190           5                                                         
+2012-09 180          14                                                         
+2013-01 191           1                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2013-10 105          83                                                         
+2013-09 180          42                                                         
+2014-03 180          37                                                         
+2012-11 190          12                                                         
+2013-03 090          65                                                         
+2013-01 105          45                                                         
+2013-03 180          28                                                         
+2012-11 150          18                                                         
+2013-04 190           8                                                         
+2013-02 150          17                                                         
+2013-05 150           4                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2014-01 090          17                                                         
+2012-10 190           7                                                         
+2013-12 220           1                                                         
+2013-12 190           1                                                         
+2012-09 105          59                                                         
+2013-10 150          63                                                         
+2012-10 220          37                                                         
+2013-11 105          64                                                         
+2012-12 180           7                                                         
+2013-02 090          50                                                         
+2012-12 150           5                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2014-01 220          20                                                         
+2014-03 150          49                                                         
+2014-01 191           3                                                         
+2013-01 150           7                                                         
+2013-02 180          26                                                         
+2013-12 180           9                                                         
+2012-09 191           4                                                         
+2013-03 220          11                                                         
+2014-04 190          14                                                         
+2014-03 191           5                                                         
+2013-12 191           1                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2013-03 150          22                                                         
+2014-02 150          61                                                         
+2014-03 220          52                                                         
+2012-11 105          72                                                         
+2013-11 150          75                                                         
+2013-04 150          25                                                         
+2014-04 180          46                                                         
+2013-11 180          32                                                         
+2014-02 105          39                                                         
+2013-01 090          30                                                         
+2013-09 220          19                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2013-05 090           4                                                         
+2012-11 108           6                                                         
+2013-11 190           3                                                         
+2013-05 105          12                                                         
+2013-05 180           2                                                         
+2013-09 190           3                                                         
+2012-11 191           1                                                         
+2014-05 150           4                                                         
+2013-12 108           1                                                         
+2012-10 150          25                                                         
+2013-10 180          43                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2013-02 105          83                                                         
+2012-10 105          90                                                         
+2013-09 090          45                                                         
+2013-10 090          51                                                         
+2014-03 105          45                                                         
+2013-03 108           7                                                         
+2014-01 150          24                                                         
+2014-01 108           3                                                         
+2013-04 220           8                                                         
+2013-10 220          21                                                         
+2013-09 108           5                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2013-10 190           4                                                         
+2013-03 191           2                                                         
+2012-09 090         119                                                         
+2013-03 105         106                                                         
+2013-09 105          78                                                         
+2013-04 105         103                                                         
+2014-03 108          14                                                         
+2014-02 090          31                                                         
+2013-01 108           5                                                         
+2014-05 105           6                                                         
+2012-10 191           6                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2012-12 090          14                                                         
+2014-03 190           6                                                         
+2013-02 191           5                                                         
+2014-05 191           1                                                         
+2014-04 090          42                                                         
+2014-02 220          48                                                         
+2012-11 090         152                                                         
+2012-10 090         117                                                         
+2014-02 190           5                                                         
+2014-04 105          31                                                         
+2013-03 190           6                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2013-11 108           6                                                         
+2012-09 108           3                                                         
+2014-04 191           6                                                         
+2012-12 220           3                                                         
+2013-01 220           2                                                         
+2013-11 191           2                                                         
+2014-04 108          11                                                         
+2014-04 220          51                                                         
+2012-11 180          22                                                         
+2013-11 090          43                                                         
+2014-04 150          48                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2013-04 108           7                                                         
+2012-09 220          39                                                         
+2014-01 105          12                                                         
+2013-05 190           1                                                         
+2012-11 220          29                                                         
+2013-10 108           7                                                         
+2013-05 220           1                                                         
+2014-05 090           2                                                         
+2013-01 180          11                                                         
+2013-02 108           6                                                         
+2013-02 190           3                                                         
+
+Date    COU # of visits                                                         
+------- --- -----------                                                         
+2014-05 220           4                                                         
+2012-12 190           1                                                         
+
+134 rows selected.
+
+SQL> spool off
